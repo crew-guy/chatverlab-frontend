@@ -1,0 +1,38 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.react-flow__attribution {
+	display: none;
+}
+
+.layoutflow {
+	flex-grow: 1;
+	position: relative;
+	height: 100%;
+}
+
+.layoutflow .controls {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	z-index: 10;
+	font-size: 12px;
+}
+
+.layoutflow .controls button:first-child {
+	margin-right: 10px;
+}
