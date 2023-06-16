@@ -1,14 +1,11 @@
-import SearchPane from '@components/molecules/SearchPane';
-import StepperWrapper from '@components/templates/Steps';
-import { PersistGate } from 'redux-persist/integration/react';
-import { persistor } from 'src/redux/store';
-
+import ChatApp from '@components/molecules/ChatFunction';
+import { Typography } from 'antd';
 const Home = () => {
   return (
-    // <PersistGate loading={null} persistor={persistor}>
-    <StepperWrapper />
-    // <SearchPane />
-    // </PersistGate>
+    <div style={{ margin: '3rem', height: '100%' }}>
+      <Typography.Title level={1} style={{ width: "100%", textAlign: 'center' }}>chat.verlab</Typography.Title>
+      <ChatApp />
+    </div>
   );
 };
 

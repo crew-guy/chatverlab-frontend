@@ -1,10 +1,13 @@
-.primary {
-  color: purple;
-  text-align: left;
+.messageContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 
-.danger {
-  width: 100%;
-  color: black;
-  text-align: right;
+.sourceDocsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 90%;
+  padding: 1rem;
 }

@@ -1,0 +1,47 @@
+.messageBubble {
+  max-width: 500px;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  color: white;
+  border-radius: 18px;
+  padding-top: 15px;
+}
+
+.messageBubble p {
+  margin: 0;
+}
+
+.user {
+  color: #ffffff;
+  background: #3194FE;
+  align-self: flex-end;
+}
+
+.user::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 20px solid #3194FE;
+  border-right: 20px solid transparent;
+}
+
+.server {
+  color: black;
+  background: #E9E9EB;
+  align-self: flex-start;
+}
+
+.server::after {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 20px solid #E9E9EB;
+  border-left: 20px solid transparent;
+}
