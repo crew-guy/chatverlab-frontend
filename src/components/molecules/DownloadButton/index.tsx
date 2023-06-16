@@ -5,12 +5,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from 'src/redux/store';
 
 const DownloadPdfButton = () => {
-  const appState = useSelector((state: RootState) => state);
+  const chatMessages = useSelector((state: RootState) => state.chatMessages);
 
   // Create a download link element
   const downloadLink = React.useRef();
   return (
-    <BlobProvider document={<FullReport appState={appState} />}>
+    <BlobProvider document={<FullReport messages={chatMessages} />}>
       {({ blob, url, loading, error }) => {
         // Handle the loading state
         if (loading) {
