@@ -6,7 +6,6 @@ import { RootState } from 'src/redux/store';
 
 const DownloadPdfButton = () => {
   const chatMessages = useSelector((state: RootState) => state.chatMessages);
-
   // Create a download link element
   const downloadLink = React.useRef();
   return (
@@ -45,7 +44,10 @@ const DownloadPdfButton = () => {
               >
                 Download
               </a>
-              <button onClick={() => (downloadLink.current as any).click()}>
+              <button onClick={() => {
+                console.log({ chatMessages });
+                (downloadLink.current as any).click()
+              }}>
                 Download PDF
               </button>
             </div>

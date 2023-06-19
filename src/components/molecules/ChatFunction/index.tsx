@@ -25,8 +25,7 @@ const ChatApp: React.FC = () => {
   const appState = useSelector((state: RootState) => state);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
-  const { bizProb } = useSelector((state: RootState) => state)
-  const [input, setInput] = useState(bizProb);
+  const [input, setInput] = useState("");
   const dispatch: AppDispatch = useDispatch();
   const handleSubmit = async () => {
     setLoading(true);
