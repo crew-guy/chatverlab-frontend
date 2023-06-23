@@ -1,4 +1,4 @@
-const archiObj = {
+export const archiObj = {
   data: {
     introduction: "This project is focused on optimizing speed and storage cost for a video platform that hosts short cat singing videos.",
     layers: [

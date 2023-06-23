@@ -85,7 +85,7 @@ const ChatApp: React.FC = () => {
           />
           <Button onClick={handleSubmit} loading={loading} type="primary" icon={<SendOutlined />}></Button>
           <PDFDownloadLink
-            document={<FullReport appState={appState} />}
+            document={<FullReport messages={appState.chatMessages} />}
             fileName={`app_report.pdf`}
           >
             {({ blob, url, loading, error }) =>
