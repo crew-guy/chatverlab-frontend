@@ -1,11 +1,16 @@
 import ChatApp from '@components/molecules/ChatFunction';
+import S3Chat from '@components/organisms/S3Chat';
 import BaseLayoutComp from '@components/templates/Layout';
 import { Typography } from 'antd';
+import { useSelector } from 'react-redux';
+import { RootState } from 'src/redux/store';
 const Home = () => {
+  const contentKey = useSelector((state: RootState) => state.contentKey)
   return (
     // <div style={{ margin: '3rem', height: '100%' }}>
     <BaseLayoutComp>
-      <ChatApp />
+      {contentKey === '1' && <ChatApp />}
+      {contentKey === '2' && <S3Chat />}
     </BaseLayoutComp>
     // </div>
   );

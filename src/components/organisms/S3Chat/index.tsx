@@ -7,10 +7,11 @@ import { useDispatch } from "react-redux";
 import { appendToChatHistory } from "@features/stateSlice";
 import { SendOutlined } from "@ant-design/icons";
 import styles from './ChatFunction.module.scss'
-import DocList, { ReferenceDocument } from "../DocsList";
+import DocList, { ReferenceDocument } from "../../molecules/DocsList";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import FullReport from "@components/organisms/FullReport";
 import MessageBubble from "@components/atoms/MessageBubble";
+import UploadToS3Button from "@components/atoms/UploadToS3";
 
 export interface ChatMessage {
   sender: "user" | "server";
@@ -21,7 +22,7 @@ export interface ChatMessage {
 
 const { Text } = Typography;
 
-const ChatApp: React.FC = () => {
+const S3Chat: React.FC = () => {
   const appState = useSelector((state: RootState) => state);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
@@ -55,7 +56,9 @@ const ChatApp: React.FC = () => {
   return (
     <div style={{ padding: "2rem", borderRadius: "0.7rem" }} >
       <div className={styles.listContainer}>
-        <Typography.Title level={3}>Using Amazon Kendra</Typography.Title>
+        <UploadToS3Button />
+        <Typography.Title level={3}>Using Custom Indexing</Typography.Title>
+        <p>Pinecone vector database and OpenAI embedding model</p>
         <List
           dataSource={messages}
           renderItem={item => (
@@ -100,4 +103,4 @@ const ChatApp: React.FC = () => {
   );
 };
 
-export default ChatApp;
+export default S3Chat;

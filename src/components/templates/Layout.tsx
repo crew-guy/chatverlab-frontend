@@ -1,13 +1,19 @@
 import React, { ReactNode } from 'react';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Menu, Typography } from 'antd';
+import { AppDispatch, RootState } from 'src/redux/store';
+import { useDispatch } from 'react-redux';
+import { setContentKey } from '@features/stateSlice';
+import { useSelector } from 'react-redux';
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const BaseLayoutComp: React.FC<{ children: ReactNode }> = ({ children }) => {
 
+  const dispatch: AppDispatch = useDispatch();
+  const contentKey = useSelector((state: RootState) => state.contentKey)
   return (
-    <Layout>
+    <Layout style={{ height: '100vh' }}>
       <Sider
         breakpoint="lg"
         collapsedWidth="0"
@@ -24,18 +30,28 @@ const BaseLayoutComp: React.FC<{ children: ReactNode }> = ({ children }) => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['4']}
-          items={
-            [
-              UserOutlined,
-              VideoCameraOutlined, UploadOutlined, UserOutlined
-            ].map(
-              (icon, index) => ({
-                key: String(index + 1),
-                icon: React.createElement(icon),
-                label: `nav ${index + 1}`,
-              }),
-            )}
+          defaultSelectedKeys={[contentKey]}
+          items={[
+            {
+              key: '1',
+              icon: <UserOutlined />,
+              label: 'Kendra RAG',
+              onClick: () => dispatch(setContentKey('1'))
+            },
+            {
+              key: '2',
+              icon: <VideoCameraOutlined />,
+              label: 'Custom Indexing',
+              onClick: () => dispatch(setContentKey('2'))
+            },
+            {
+              key: '3',
+              icon: <UploadOutlined />,
+              label: 'PG vector AWS',
+              onClick: () => dispatch(setContentKey('3'))
+            },
+          ]
+          }
         />
       </Sider>
       <Layout>

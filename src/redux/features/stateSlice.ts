@@ -12,6 +12,7 @@ interface state {
   currentPane: number,
   archiObj: ChatResponse,
   chatMessages: ChatMessage[],
+  contentKey: string,
 }
 
 const initialState: state = {
@@ -22,6 +23,7 @@ const initialState: state = {
     source_docs: []
   },
   chatMessages: [],
+  contentKey: "1",
 }
 
 export const stateSlice = createSlice({
@@ -36,6 +38,9 @@ export const stateSlice = createSlice({
     },
     appendToChatHistory: (state, action: PayloadAction<ChatMessage>) => {
       state.chatMessages.push(action.payload);
+    },
+    setContentKey: (state, action: PayloadAction<string>) => {
+      state.contentKey = action.payload;
     }
   },
 });
@@ -44,6 +49,7 @@ export const {
   setBizProb,
   appendToChatHistory,
   setChatResponse,
+  setContentKey
 } = stateSlice.actions;
 
 export default stateSlice.reducer;
