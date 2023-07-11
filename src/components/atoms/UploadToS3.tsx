@@ -4,7 +4,7 @@ import { UploadOutlined } from '@ant-design/icons';
 import S3 from 'react-aws-s3';
 
 const config = {
-  bucketName: 'demo-verlab-kendra-bucket',
+  bucketName: 'demo-chat-verlab-bucket',
   dirName: 'uploads', /* optional */
   region: 'ap-south-1',
   accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,

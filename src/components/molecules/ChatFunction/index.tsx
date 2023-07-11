@@ -18,11 +18,9 @@ export interface ChatMessage {
   sourceDocs?: ReferenceDocument[];
 }
 
-
-const { Text } = Typography;
-
 const ChatApp: React.FC = () => {
   const appState = useSelector((state: RootState) => state);
+  const contentKey = useSelector((state: RootState) => state.contentKey)
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState("");
@@ -31,9 +29,10 @@ const ChatApp: React.FC = () => {
     setLoading(true);
     setMessages([...messages, { sender: "user", content: input }]);
     dispatch(appendToChatHistory({ sender: "user", content: input }))
+    const urlRoute = contentKey == '1' ? `chat` : `pinechat`
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL_2}/chat`, // replace with your API endpoint
+        `${process.env.NEXT_PUBLIC_API_URL_2}/${urlRoute}`, // replace with your API endpoint
         {
           prompt: input
         }
