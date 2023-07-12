@@ -34,7 +34,7 @@ const ChatApp: React.FC = () => {
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_URL_2}/${urlRoute}`, // replace with your API endpoint
         {
-          prompt: input
+          query: input
         }
       );
       setMessages([

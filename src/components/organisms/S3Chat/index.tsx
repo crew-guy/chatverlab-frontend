@@ -34,9 +34,9 @@ const S3Chat: React.FC = () => {
     dispatch(appendToChatHistory({ sender: "user", content: input }))
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL_2}/chat`, // replace with your API endpoint
+        `${process.env.NEXT_PUBLIC_API_URL_2}/pinechat`, // replace with your API endpoint
         {
-          prompt: input
+          query: input
         }
       );
       setMessages([
