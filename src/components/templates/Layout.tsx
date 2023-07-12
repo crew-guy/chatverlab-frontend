@@ -41,7 +41,7 @@ const BaseLayoutComp: React.FC<{ children: ReactNode }> = ({ children }) => {
             {
               key: '2',
               icon: <VideoCameraOutlined />,
-              label: 'Custom Indexing',
+              label: 'Indexing with Pinecone',
               onClick: () => dispatch(setContentKey('2'))
             },
             {
