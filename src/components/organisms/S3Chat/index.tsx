@@ -59,7 +59,7 @@ const S3Chat: React.FC = () => {
       <div className={styles.listContainer}>
         <UploadToS3Button />
         <Typography.Title level={3}>Using Custom Indexing - Upload a bunch of files, ask a question</Typography.Title>
-        <p>Pinecone vector database and OpenAI embedding model</p>
+        <p>Pinecone vector database and OpenAI embedding model - Wait for 1 min after successful file upload to ask a question</p>
         <List
           dataSource={messages}
           renderItem={item => (
