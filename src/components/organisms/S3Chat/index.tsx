@@ -58,7 +58,7 @@ const S3Chat: React.FC = () => {
     <div style={{ padding: "2rem", borderRadius: "0.7rem" }} >
       <div className={styles.listContainer}>
         <UploadToS3Button />
-        <Typography.Title level={3}>Using Custom Indexing</Typography.Title>
+        <Typography.Title level={3}>Using Custom Indexing - Upload a bunch of files, ask a question</Typography.Title>
         <p>Pinecone vector database and OpenAI embedding model</p>
         <List
           dataSource={messages}
