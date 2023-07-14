@@ -11,6 +11,7 @@ import DocList, { ReferenceDocument } from "../DocsList";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import FullReport from "@components/organisms/FullReport";
 import MessageBubble from "@components/atoms/MessageBubble";
+import UploadToS3Button from "@components/atoms/UploadToS3";
 
 export interface ChatMessage {
   sender: "user" | "server";
@@ -55,6 +56,8 @@ const ChatApp: React.FC = () => {
     <div style={{ padding: "2rem", borderRadius: "0.7rem" }} >
       <div className={styles.listContainer}>
         <Typography.Title level={3}>Using Amazon Kendra</Typography.Title>
+        <p>Upload 1 or more than 1 file, ask some questions</p>
+        <UploadToS3Button />
         <List
           dataSource={messages}
           renderItem={item => (
