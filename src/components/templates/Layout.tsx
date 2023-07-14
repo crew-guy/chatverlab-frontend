@@ -44,12 +44,12 @@ const BaseLayoutComp: React.FC<{ children: ReactNode }> = ({ children }) => {
               label: 'Indexing with Pinecone',
               onClick: () => dispatch(setContentKey('2'))
             },
-            {
-              key: '3',
-              icon: <UploadOutlined />,
-              label: 'PG vector AWS',
-              onClick: () => dispatch(setContentKey('3'))
-            },
+            // {
+            //   key: '3',
+            //   icon: <UploadOutlined />,
+            //   label: 'PG vector AWS',
+            //   onClick: () => dispatch(setContentKey('3'))
+            // },
           ]
           }
         />

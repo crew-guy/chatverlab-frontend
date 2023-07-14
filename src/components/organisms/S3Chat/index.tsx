@@ -39,12 +39,13 @@ const S3Chat: React.FC = () => {
           query: input
         }
       );
+      const serverChatResponse = response.data.answer
       setMessages([
         ...messages,
         { sender: "user", content: input },
-        { sender: "server", content: response.data.data, sourceDocs: response.data.source_docs }
+        { sender: "server", content: serverChatResponse, sourceDocs: response.data.source_docs }
       ]);
-      dispatch(appendToChatHistory({ sender: "server", content: response.data.data, sourceDocs: response.data.source_docs }))
+      dispatch(appendToChatHistory({ sender: "server", content: serverChatResponse, sourceDocs: response.data.source_docs }))
     } catch (error) {
       console.error(error);
     } finally {
